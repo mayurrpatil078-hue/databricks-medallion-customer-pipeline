@@ -20,6 +20,8 @@ The project demonstrates raw data ingestion, data cleaning, incremental loading,
 
 Source Data → Bronze → Silver → Gold → Analytics
 
+![Medallion Architecture](images/medallion_architecture.png)
+
 ## Project Notebooks
 
 | Notebook | Description |
