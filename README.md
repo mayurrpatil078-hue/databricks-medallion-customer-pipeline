@@ -19,6 +19,7 @@ The project demonstrates raw data ingestion, data cleaning, incremental loading,
 ## Architecture
 
 Source Data → Bronze → Silver → Gold → Analytics
+
 ![Databricks Medallion Architecture](images/medallion_architecture.png)
 
 ## Project Notebooks
