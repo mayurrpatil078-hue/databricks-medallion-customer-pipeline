@@ -1,0 +1,6 @@
+flowchart TD A\[Customer source data\] --\> B\[Azure Data Factory\] B
+--\> C\[Azure Data Lake Storage Gen2\] C --\> D\[Bronze: raw ingestion\]
+D --\> E\[Silver: cleansing and validation\] E --\> F\[Gold: curated
+analytics\] F --\> G\[Azure SQL Database\] G --\> H\[Power BI\] E --\>
+I\[Incremental load / Delta MERGE\] E --\> J\[Data quality checks\] D
+--\> K\[Pipeline audit logging\]
