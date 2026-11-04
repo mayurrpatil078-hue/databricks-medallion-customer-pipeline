@@ -18,9 +18,21 @@ The project demonstrates raw data ingestion, data cleaning, incremental loading,
 
 ## Architecture
 
-Source Data → Bronze → Silver → Gold → Analytics
+This project follows the Medallion Architecture pattern with Bronze, Silver and Gold layers.
 
-![Databricks Medallion Architecture](images/medallion_architecture.png)
+```mermaid
+flowchart TD
+    A["Customer Source Data"] --> B["Azure Data Factory"]
+    B --> C["ADLS Gen2"]
+    C --> D["Bronze - Raw Ingestion"]
+    D --> E["Silver - Data Cleansing"]
+    E --> F["Gold - Customer Analytics"]
+    F --> G["Azure SQL Database"]
+    G --> H["Power BI"]
+
+    E --> I["Data Quality Checks"]
+    E --> J["Incremental Load and Merge"]
+    D --> K["Pipeline Audit Log"]
 
 ## Project Notebooks
 
