@@ -16,6 +16,7 @@ The project demonstrates raw data ingestion, data cleaning, incremental loading,
 - Databricks Jobs and Workflows
 - Medallion Architecture
 
+
 ## Architecture
 
 This project follows the Medallion Architecture pattern with Bronze, Silver and Gold layers.
@@ -33,6 +34,7 @@ flowchart TD
     E --> I["Data Quality Checks"]
     E --> J["Incremental Load and Merge"]
     D --> K["Pipeline Audit Log"]
+```
 
 ## Project Notebooks
 
