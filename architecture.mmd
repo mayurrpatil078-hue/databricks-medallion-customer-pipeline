@@ -1,6 +1,24 @@
-flowchart TD A\[Customer source data\] --\> B\[Azure Data Factory\] B
---\> C\[Azure Data Lake Storage Gen2\] C --\> D\[Bronze: raw ingestion\]
-D --\> E\[Silver: cleansing and validation\] E --\> F\[Gold: curated
-analytics\] F --\> G\[Azure SQL Database\] G --\> H\[Power BI\] E --\>
-I\[Incremental load / Delta MERGE\] E --\> J\[Data quality checks\] D
---\> K\[Pipeline audit logging\]
+
+flowchart TD
+    A["Customer Source Data"]
+    B["Azure Data Factory"]
+    C["ADLS Gen2"]
+    D["Bronze Layer - Raw Ingestion"]
+    E["Silver Layer - Data Cleansing"]
+    F["Gold Layer - Business Analytics"]
+    G["Azure SQL Database"]
+    H["Power BI"]
+    I["Data Quality Checks"]
+    J["Incremental Load and Merge"]
+    K["Pipeline Audit Log"]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> G
+    G --> H
+    E --> I
+    E --> J
+    D --> K
